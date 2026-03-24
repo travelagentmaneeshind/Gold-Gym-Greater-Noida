@@ -4,324 +4,1246 @@
   <meta charset="UTF-8" />
   <title>Gold's Gym Greater Noida & Greater Noida West</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Google Fonts: bold display + clean body -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
   <style>
-    body { margin: 0; font-family: Arial, sans-serif; background:#050505; color:#f5f5f5; }
-    a { color: #ffd400; text-decoration: none; }
-    header { background:#000; padding:12px 32px; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:100; }
-    .logo { font-weight:bold; letter-spacing:1px; }
-    nav a { margin-left:20px; font-size:14px; text-transform:uppercase; }
-    .btn-primary { background:#ffd400; color:#000; padding:10px 18px; border-radius:4px; font-weight:bold; }
-    .btn-outline { border:1px solid #ffd400; padding:8px 16px; border-radius:4px; color:#ffd400; }
-    .hero { display:flex; flex-wrap:wrap; padding:40px 8%; background:url('hero-gym.jpg') center/cover no-repeat fixed, #111; }
-    .hero-left { flex:1 1 320px; max-width:600px; }
-    .hero-left h1 { font-size:36px; margin-bottom:12px; text-transform:uppercase; }
-    .hero-left p { font-size:16px; line-height:1.5; max-width:440px; }
-    .hero-ctas { margin-top:20px; display:flex; flex-wrap:wrap; gap:12px; }
-    .hero-right { flex:0 0 340px; max-width:380px; margin-left:auto; background:rgba(0,0,0,0.8); padding:20px; border-radius:6px; border:1px solid #333; }
-    .hero-right h3 { margin-top:0; text-transform:uppercase; font-size:16px; }
-    .form-group { margin-bottom:10px; }
-    label { display:block; font-size:12px; margin-bottom:4px; text-transform:uppercase; letter-spacing:0.5px; }
-    input, select, textarea { width:100%; padding:8px; border-radius:4px; border:1px solid #444; background:#111; color:#f5f5f5; font-size:13px; }
-    textarea { min-height:60px; resize:vertical; }
-    .section { padding:40px 8%; }
-    .section-title { font-size:22px; text-transform:uppercase; margin-bottom:8px; }
-    .section-subtitle { font-size:14px; color:#bbb; margin-bottom:24px; }
-    .cards-row { display:flex; flex-wrap:wrap; gap:16px; }
-    .card { flex:1 1 220px; background:#111; border-radius:6px; padding:16px; border:1px solid #222; }
-    .card h4 { margin-top:0; margin-bottom:6px; text-transform:uppercase; font-size:14px; }
-    .badge { display:inline-block; padding:2px 6px; border-radius:3px; font-size:10px; background:#ffd400; color:#000; text-transform:uppercase; }
-    .program-icon { font-size:24px; margin-bottom:8px; }
-    .two-col { display:flex; flex-wrap:wrap; gap:32px; }
-    .two-col > div { flex:1 1 300px; }
-    .location-map { background:#111; border-radius:6px; padding:16px; border:1px solid #222; min-height:160px; }
-    footer { background:#000; color:#999; padding:24px 8%; font-size:13px; }
-    footer .footer-top { display:flex; flex-wrap:wrap; gap:24px; margin-bottom:16px; }
-    footer a { color:#bbb; font-size:13px; }
-    .socials a { margin-right:10px; }
-    .whatsapp-bubble {
-      position:fixed; right:20px; bottom:20px; background:#25D366; color:#fff;
-      padding:10px 14px; border-radius:20px; font-size:13px; box-shadow:0 0 10px rgba(0,0,0,0.5);
+    :root {
+      --gold: #ffdd02;         /* Gold's Gym yellow */
+      --deep-gold: #c9ab00;
+      --dark: #050507;
+      --dark-elevated: #111119;
+      --accent-health: #22c55e; /* health/positive */
+      --text-main: #f5f5f5;
+      --text-muted: #a5a5b5;
+      --danger: #f97373;
     }
-    @media (max-width:768px){
-      .hero { padding:24px 5%; }
-      header { padding:10px 16px; }
-      .hero-right { margin:20px 0 0 0; max-width:100%; }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #222638 0, #050507 45%, #020306 100%);
+      color: var(--text-main);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* HEADER / NAV */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: rgba(5, 5, 7, 0.92);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .nav-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo-lockup {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-circle {
+      width: 38px;
+      height: 38px;
+      border-radius: 999px;
+      border: 2px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Oswald", sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+
+    .logo-text-main {
+      font-family: "Oswald", sans-serif;
+      font-size: 16px;
+      letter-spacing: 2px;
+    }
+
+    .logo-text-sub {
+      font-size: 11px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-size: 13px;
+      text-transform: uppercase;
+    }
+
+    nav a {
+      color: var(--text-muted);
+      letter-spacing: 0.06em;
+      position: relative;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold), var(--accent-health));
+      transition: width 0.2s ease-out;
+    }
+
+    nav a:hover {
+      color: var(--text-main);
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn {
+      border-radius: 999px;
+      padding: 9px 18px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: all 0.2s ease-out;
+      background: none;
+      color: var(--text-main);
+    }
+
+    .btn-gold {
+      background: radial-gradient(circle at 20% 0, #fff5b5 0, #ffdd02 25%, #c49e00 70%);
+      color: #181105;
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.4), 0 12px 25px rgba(0, 0, 0, 0.7);
+    }
+
+    .btn-gold:hover {
+      filter: brightness(1.06);
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      border-color: rgba(249, 250, 251, 0.18);
+      color: var(--text-muted);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--gold);
+      color: var(--text-main);
+      background: linear-gradient(120deg, rgba(255, 221, 2, 0.06), transparent);
+    }
+
+    /* LAYOUT HELPERS */
+
+    .shell {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 28px 20px 44px;
+    }
+
+    .pill-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      background: rgba(40, 40, 50, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      color: var(--text-muted);
+    }
+
+    .pill-tag span.dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--accent-health);
+      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.26);
+    }
+
+    .section-kicker {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .section-title {
+      font-family: "Oswald", sans-serif;
+      font-size: 26px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .section-body {
+      font-size: 14px;
+      color: var(--text-muted);
+      max-width: 560px;
+    }
+
+    /* HERO */
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.4fr);
+      gap: 32px;
+      align-items: center;
+      padding-top: 30px;
+      padding-bottom: 18px;
+      position: relative;
+    }
+
+    .hero::before {
+      /* subtle gradient glow behind hero form */
+      content: "";
+      position: absolute;
+      right: -8%;
+      top: 5%;
+      width: 360px;
+      height: 360px;
+      background: radial-gradient(circle at 50% 30%, rgba(255, 221, 2, 0.12), transparent 60%);
+      opacity: 0.85;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .hero-copy h1 {
+      font-family: "Oswald", sans-serif;
+      font-size: clamp(32px, 4vw, 40px);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin: 10px 0 10px;
+    }
+
+    .hero-copy h1 span {
+      color: var(--gold);
+    }
+
+    .hero-subline {
+      font-size: 14px;
+      color: var(--text-muted);
+      max-width: 520px;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .hero-badge {
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      background: rgba(12, 12, 18, 0.9);
+    }
+
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      margin-top: 22px;
+    }
+
+    .hero-note {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 8px;
+    }
+
+    .hero-media {
+      border-radius: 26px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      background:
+        linear-gradient(145deg, rgba(9, 9, 11, 0.92), rgba(8, 8, 28, 0.98)),
+        url("images/hero-gym.jpg") center/cover no-repeat;
+      /* NOTE: add your own hero-gym.jpg in /images or replace url with a hosted photo */
+      box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.9),
+        0 0 0 1px rgba(255, 255, 255, 0.03);
+      display: grid;
+      grid-template-rows: 1.4fr auto;
+      min-height: 360px;
+      position: relative;
+    }
+
+    .hero-media-overlay {
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.82), transparent 55%);
+      padding: 18px 20px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    .hero-media-stat {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .hero-media-stat strong {
+      display: block;
+      font-family: "Oswald", sans-serif;
+      font-size: 20px;
+      color: var(--gold);
+      letter-spacing: 0.08em;
+    }
+
+    .hero-media-chip {
+      padding: 6px 11px;
+      border-radius: 999px;
+      background: rgba(20, 20, 30, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      font-size: 11px;
+    }
+
+    /* LEAD FORM PANEL (floating card under hero) */
+
+    .lead-form-shell {
+      margin-top: 26px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(0, 2.2fr);
+      gap: 22px;
+      align-items: flex-start;
+    }
+
+    .lead-form-card {
+      background: linear-gradient(145deg, #0c0c12, #171727);
+      border-radius: 18px;
+      padding: 18px 18px 20px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.85);
+    }
+
+    .lead-form-card h3 {
+      font-family: "Oswald", sans-serif;
+      font-size: 17px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .lead-form-card p {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    form {
+      font-size: 12px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1.5fr;
+      gap: 10px 12px;
+    }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .form-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      color: var(--text-muted);
+    }
+
+    input, select, textarea {
+      background: #05050b;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 999px;
+      padding: 7px 11px;
+      color: var(--text-main);
+      font-family: inherit;
+      font-size: 12px;
+      outline: none;
+      transition: border 0.16s ease-out, box-shadow 0.16s ease-out, background 0.16s;
+    }
+
+    textarea {
+      border-radius: 12px;
+      min-height: 60px;
+      resize: vertical;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 1px rgba(255, 221, 2, 0.35);
+      background: #080818;
+    }
+
+    .form-footer {
+      margin-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .form-note {
+      font-size: 10px;
+      color: var(--text-muted);
+      max-width: 220px;
+    }
+
+    /* PROGRAMS GRID */
+
+    .section {
+      margin-top: 50px;
+    }
+
+    .programs-grid {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .program-card {
+      position: relative;
+      border-radius: 18px;
+      overflow: hidden;
+      background: #111119;
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      min-height: 180px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      color: var(--text-main);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+      cursor: pointer;
+      transition: transform 0.2s ease-out, box-shadow 0.2s ease-out, border-color 0.2s;
+    }
+
+    .program-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.86), transparent 55%);
+      z-index: 1;
+    }
+
+    .program-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      inset: 0;
+      opacity: 0.9;
+      transform: scale(1.02);
+      transition: transform 0.25s ease-out, opacity 0.25s;
+    }
+
+    .program-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 55px rgba(0, 0, 0, 0.85);
+      border-color: rgba(255, 221, 2, 0.45);
+    }
+
+    .program-card:hover img {
+      transform: scale(1.06);
+      opacity: 1;
+    }
+
+    .program-content {
+      position: relative;
+      z-index: 2;
+      padding: 14px 14px 13px;
+    }
+
+    .program-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--text-muted);
+      margin-bottom: 3px;
+    }
+
+    .program-title {
+      font-family: "Oswald", sans-serif;
+      font-size: 16px;
+      letter-spacing: 0.06em;
+      margin-bottom: 4px;
+    }
+
+    .program-meta {
+      font-size: 11px;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .chip {
+      padding: 3px 8px;
+      border-radius: 999px;
+      font-size: 10px;
+      background: rgba(6, 148, 162, 0.22);
+      border: 1px solid rgba(34, 211, 238, 0.4);
+      color: #a5f3fc;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    /* CORPORATE */
+
+    .corporate {
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.4fr);
+      gap: 26px;
+      margin-top: 18px;
+      align-items: flex-start;
+    }
+
+    .corporate-list {
+      margin-top: 10px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .corporate-list li {
+      margin-bottom: 6px;
+    }
+
+    .corporate-panel {
+      border-radius: 20px;
+      padding: 16px 18px 18px;
+      background: radial-gradient(circle at 10% 0, rgba(34, 197, 94, 0.06), transparent 60%), #090911;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 12px;
+    }
+
+    .corporate-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 10px 0 12px;
+    }
+
+    .pill-soft {
+      padding: 4px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    /* TRAINERS / STORIES */
+
+    .trainers-grid {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .trainer-card {
+      background: #0f0f16;
+      border-radius: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      font-size: 13px;
+    }
+
+    .trainer-media {
+      height: 170px;
+      overflow: hidden;
+    }
+
+    .trainer-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.03);
+      transition: transform 0.25s ease-out;
+    }
+
+    .trainer-card:hover .trainer-media img {
+      transform: scale(1.08);
+    }
+
+    .trainer-body {
+      padding: 10px 12px 12px;
+    }
+
+    .trainer-name {
+      font-family: "Oswald", sans-serif;
+      font-size: 15px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .trainer-role {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .trainer-speciality {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    /* CONTACT / LOCATION */
+
+    .contact-grid {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.4fr);
+      gap: 20px;
+    }
+
+    .contact-card {
+      background: #0d0d15;
+      border-radius: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 16px 18px 18px;
+      font-size: 13px;
+    }
+
+    .contact-meta p {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .contact-meta strong {
+      color: var(--text-main);
+    }
+
+    .contact-tagline {
+      margin-top: 10px;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    /* FOOTER */
+
+    footer {
+      margin-top: 52px;
+      border-top: 1px solid rgba(148, 148, 165, 0.16);
+      background: radial-gradient(circle at top, rgba(255, 221, 2, 0.06), transparent 55%), #050507;
+    }
+
+    .footer-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 18px 20px 22px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      align-items: flex-start;
+      justify-content: space-between;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .footer-links a {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 10px;
+      font-size: 12px;
+    }
+
+    .whatsapp-fab {
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      z-index: 50;
+      background: #22c55e;
+      color: #022c13;
+      padding: 9px 12px;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.7);
+    }
+
+    .whatsapp-fab span.bubble-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #bbf7d0;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 960px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .hero-media {
+        order: -1;
+      }
+      .lead-form-shell {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .programs-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .corporate,
+      .contact-grid,
+      .trainers-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    @media (max-width: 720px) {
+      nav {
+        display: none; /* keep header clean on very small screens for now */
+      }
+      .hero {
+        padding-top: 20px;
+      }
+      .form-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .programs-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .shell {
+        padding: 20px 16px 36px;
+      }
+      .lead-form-card {
+        padding: 16px 14px 17px;
+      }
+      .footer-inner {
+        padding-inline: 16px;
+      }
     }
   </style>
 </head>
+
 <body>
 
 <header>
-  <div class="logo">GOLD'S GYM<br/><span style="font-size:11px;">Greater Noida & GN West</span></div>
-  <nav>
-    <a href="#programs">Programs</a>
-    <a href="#whatsnew">What’s New</a>
-    <a href="#corporate">Corporate</a>
-    <a href="#trainers">Trainers</a>
-    <a href="#contact" class="btn-outline">Query</a>
-    <a href="tel:+91xxxxxxxxxx" class="btn-primary">Call Now</a>
-  </nav>
+  <div class="nav-inner">
+    <div class="logo-lockup">
+      <div class="logo-circle">GG</div>
+      <div>
+        <div class="logo-text-main">GOLD'S GYM</div>
+        <div class="logo-text-sub">Greater Noida &amp; Greater Noida West</div>
+      </div>
+    </div>
+
+    <nav>
+      <a href="#programs">Programs</a>
+      <a href="#whatsnew">What’s New</a>
+      <a href="#corporate">Corporate</a>
+      <a href="#trainers">Trainers</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="nav-cta">
+      <a href="tel:+91XXXXXXXXXX" class="btn btn-outline">Call Studio</a>
+      <a href="#lead" class="btn btn-gold">Book Free Trial</a>
+    </div>
+  </div>
 </header>
 
-<section class="hero">
-  <div class="hero-left">
-    <h1>Transform in 90 Days at Gold's Gym Greater Noida</h1>
-    <p>Bodybuilding • Yoga • Muay Thai • Kickboxing • Zumba • Personal Training • Corporate Gym Solutions.</p>
-    <div class="hero-ctas">
-      <a href="#contact" class="btn-primary">Book Free Trial</a>
-      <a href="#programs" class="btn-outline">View Programs</a>
-      <a href="#corporate" class="btn-outline">Corporate Gym Setup</a>
-    </div>
-  </div>
+<main class="shell">
 
-  <div class="hero-right">
-    <h3>Get a Call Back in 15 Minutes</h3>
-    <!-- Replace ACTION with your Make.com webhook URL -->
-    <form action="https://hook.make.com/YOUR_WEBHOOK_ID" method="post">
-      <input type="hidden" name="Source" value="Website_Hero" />
-      <div class="form-group">
-        <label for="name">Full Name *</label>
-        <input id="name" name="Name" required />
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="hero-copy">
+      <div class="pill-tag">
+        <span class="dot"></span>
+        Gold’s Standard Training • Greater Noida
       </div>
-      <div class="form-group">
-        <label for="phone">Mobile Number *</label>
-        <input id="phone" name="Phone" required />
-      </div>
-      <div class="form-group">
-        <label for="interest">I’m Interested In *</label>
-        <select id="interest" name="Lead_Type" required>
-          <option value="">Select</option>
-          <option>Membership</option>
-          <option>Personal Training</option>
-          <option>Program</option>
-          <option>Corporate</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="program">Select Program</label>
-        <select id="program" name="Program_Interest">
-          <option value="">Any / Not Sure</option>
-          <option>Bodybuilding</option>
-          <option>Yoga</option>
-          <option>Muay Thai</option>
-          <option>Kickboxing</option>
-          <option>Zumba</option>
-          <option>Transformation</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="location">Preferred Location *</label>
-        <select id="location" name="Preferred_Location" required>
-          <option>Greater Noida</option>
-          <option>Greater Noida West</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="message">How can we help?</label>
-        <textarea id="message" name="Notes"></textarea>
-      </div>
-      <button type="submit" class="btn-primary" style="width:100%;">Submit &amp; Get Callback</button>
-      <p style="font-size:11px; color:#aaa; margin-top:6px;">
-        By submitting, you agree to be contacted via call/WhatsApp for this enquiry.
+
+      <h1>Premium <span>Body&nbsp;Transformation</span> &amp; Corporate Wellness</h1>
+
+      <p class="hero-subline">
+        International‑standard gym, combat sports and group classes under one roof – with corporate gym setup for offices,
+        societies and campuses across Greater Noida &amp; GN West.
       </p>
-    </form>
-  </div>
-</section>
 
-<section id="whatsnew" class="section">
-  <div class="section-title">What’s New This Week</div>
-  <div class="section-subtitle">Fresh programs, new batches and limited period offers updated regularly.</div>
-  <div class="cards-row">
-    <div class="card">
-      <span class="badge">New Batch</span>
-      <h4>Muay Thai – 7 PM Batch</h4>
-      <p>High-intensity Muay Thai classes starting 1st April for beginners and intermediates.</p>
-      <a href="#contact">Enquire for Muay Thai</a>
-    </div>
-    <div class="card">
-      <span class="badge">Offer</span>
-      <h4>Summer Transformation Offer</h4>
-      <p>12-week personal training + nutrition guidance for serious fat loss and muscle gain.</p>
-      <a href="#contact">Request Details</a>
-    </div>
-    <div class="card">
-      <span class="badge">Corporate</span>
-      <h4>Corporate Wellness Camp</h4>
-      <p>On-site fitness & yoga sessions for offices in Noida / Greater Noida.</p>
-      <a href="#corporate">Know More</a>
-    </div>
-  </div>
-</section>
-
-<section id="programs" class="section">
-  <div class="section-title">Programs & Sessions</div>
-  <div class="section-subtitle">Choose from strength, combat, group classes and specialised coaching.</div>
-  <div class="cards-row">
-    <div class="card">
-      <div class="program-icon">🏋️</div>
-      <h4>Bodybuilding</h4>
-      <p>Serious strength training with advanced equipment and coaching.</p>
-      <a href="#contact">Enquire</a>
-    </div>
-    <div class="card">
-      <div class="program-icon">🧘</div>
-      <h4>Yoga</h4>
-      <p>Flexibility, balance and stress relief with morning and evening batches.</p>
-      <a href="#contact">Enquire</a>
-    </div>
-    <div class="card">
-      <div class="program-icon">🥊</div>
-      <h4>Muay Thai & Kickboxing</h4>
-      <p>Combat fitness, self-defence and conditioning classes.</p>
-      <a href="#contact">Enquire</a>
-    </div>
-    <div class="card">
-      <div class="program-icon">💃</div>
-      <h4>Zumba & Group Classes</h4>
-      <p>Fun, music-driven sessions to burn calories and stay consistent.</p>
-      <a href="#contact">Enquire</a>
-    </div>
-    <div class="card">
-      <div class="program-icon">🔥</div>
-      <h4>Transformation Coaching</h4>
-      <p>Goal-based personalised programs for 8–16 weeks.</p>
-      <a href="#contact">Enquire</a>
-    </div>
-  </div>
-</section>
-
-<section id="corporate" class="section">
-  <div class="two-col">
-    <div>
-      <div class="section-title">Corporate Gym Solutions</div>
-      <div class="section-subtitle">
-        Design, setup and operate complete gyms inside offices, societies and campuses in Noida & Greater Noida.
+      <div class="hero-badges">
+        <div class="hero-badge">Bodybuilding &amp; Strength</div>
+        <div class="hero-badge">Yoga • Zumba • Functional</div>
+        <div class="hero-badge">Muay Thai • Kickboxing</div>
+        <div class="hero-badge">Corporate Gym Management</div>
       </div>
-      <ul style="padding-left:18px; font-size:14px;">
-        <li>Gym layout, equipment selection and installation.</li>
-        <li>Certified trainers and floor staff as per corporate requirement.</li>
-        <li>On-site group classes: yoga, Zumba, bootcamps, Muay Thai.</li>
-        <li>Reporting, attendance and engagement tracking.</li>
-      </ul>
-      <a href="#contact" class="btn-primary">Enquire for Corporate Gym</a>
-    </div>
-    <div class="location-map">
-      <!-- Replace with actual embedded Google Map or image -->
-      <p><strong>Service Areas:</strong><br/>
-      Greater Noida, Greater Noida West, Noida IT Parks, Knowledge Park, nearby industrial & residential hubs.</p>
-      <p>We visit your site, design your gym and deploy trainers as per requirement.</p>
-    </div>
-  </div>
-</section>
 
-<section id="trainers" class="section">
-  <div class="section-title">Trainers & Success Stories</div>
-  <div class="section-subtitle">Meet the team behind your transformation.</div>
-  <div class="cards-row">
-    <div class="card">
-      <h4>Rahul – Head Coach</h4>
-      <p>Bodybuilding & strength specialist with 10+ years of experience.</p>
-      <a href="#contact">Book with Rahul</a>
-    </div>
-    <div class="card">
-      <h4>Priya – Yoga & Zumba</h4>
-      <p>Yoga, Zumba and fat-loss group classes for all age groups.</p>
-      <a href="#contact">Book with Priya</a>
-    </div>
-    <div class="card">
-      <h4>Imran – Muay Thai</h4>
-      <p>Combat sports trainer for Muay Thai & kickboxing.</p>
-      <a href="#contact">Book with Imran</a>
-    </div>
-  </div>
-</section>
+      <div class="hero-cta-row">
+        <a href="#lead" class="btn btn-gold">Start 1‑Day Free Trial</a>
+        <a href="#programs" class="btn btn-outline">View Membership &amp; Programs</a>
+      </div>
 
-<section id="contact" class="section">
-  <div class="two-col">
-    <div>
-      <div class="section-title">Query & Membership Enquiry</div>
-      <div class="section-subtitle">Share your details and we’ll get in touch shortly.</div>
-      <!-- Main query form (can point to same or another webhook) -->
+      <p class="hero-note">
+        No pressure, no contracts on trial. Speak directly with our coaching team within 15 minutes of submitting your details.
+      </p>
+    </div>
+
+    <aside class="hero-media">
+      <!-- Add a strong gym background photo as images/hero-gym.jpg OR replace the CSS url above with your hosted photo -->
+      <div class="hero-media-overlay">
+        <div class="hero-media-stat">
+          <strong>2 LOCATIONS</strong>
+          GN &amp; GN West studios with dedicated strength, combat &amp; group zones.
+        </div>
+        <div class="hero-media-chip">Open 6 AM – 10 PM • Mon–Sat</div>
+      </div>
+    </aside>
+  </section>
+
+  <!-- LEAD FORM PANEL -->
+  <section class="lead-form-shell" id="lead">
+    <div class="lead-form-card">
+      <h3>Get a Call Back in 15 Minutes</h3>
+      <p>Drop your details for memberships, programs or corporate gyms. Our team will call or WhatsApp you quickly.</p>
+
+      <!-- TODO: replace action URL with your real Make.com webhook -->
       <form action="https://hook.make.com/YOUR_WEBHOOK_ID" method="post">
-        <input type="hidden" name="Source" value="Website_Contact" />
-        <div class="form-group">
-          <label for="q_name">Full Name *</label>
-          <input id="q_name" name="Name" required />
+        <input type="hidden" name="Source" value="Website_Hero" />
+        <div class="form-grid">
+          <div class="form-field">
+            <label class="form-label" for="name">Full Name *</label>
+            <input id="name" name="Name" required />
+          </div>
+          <div class="form-field">
+            <label class="form-label" for="phone">Mobile *</label>
+            <input id="phone" name="Phone" required />
+          </div>
+          <div class="form-field">
+            <label class="form-label" for="interest">I’m Interested In *</label>
+            <select id="interest" name="Lead_Type" required>
+              <option value="">Select</option>
+              <option>Membership</option>
+              <option>Personal Training</option>
+              <option>Program</option>
+              <option>Corporate</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label class="form-label" for="program">Program Focus</label>
+            <select id="program" name="Program_Interest">
+              <option value="">Any / Not sure</option>
+              <option>Bodybuilding</option>
+              <option>Yoga</option>
+              <option>Muay Thai</option>
+              <option>Kickboxing</option>
+              <option>Zumba</option>
+              <option>Transformation</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label class="form-label" for="location">Preferred Location *</label>
+            <select id="location" name="Preferred_Location" required>
+              <option>Greater Noida</option>
+              <option>Greater Noida West</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label class="form-label" for="time">Preferred Time</label>
+            <select id="time" name="Preferred_Time">
+              <option value="">Any</option>
+              <option>Early Morning</option>
+              <option>Morning</option>
+              <option>Evening</option>
+            </select>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="q_phone">Mobile Number *</label>
-          <input id="q_phone" name="Phone" required />
+
+        <div class="form-field" style="margin-top:8px;">
+          <label class="form-label" for="notes">Goal / Question</label>
+          <textarea id="notes" name="Notes" placeholder="E.g. 10 kg fat loss in 3 months, Muay Thai starter, corporate gym for 200 employees"></textarea>
         </div>
-        <div class="form-group">
-          <label for="q_email">Email</label>
-          <input id="q_email" name="Email" />
+
+        <div class="form-footer">
+          <button type="submit" class="btn btn-gold">Submit &amp; Get Call</button>
+          <p class="form-note">
+            By submitting, you agree to be contacted via call/WhatsApp for this enquiry. We never sell or share your details.
+          </p>
         </div>
-        <div class="form-group">
-          <label for="q_area">Area / Society</label>
-          <input id="q_area" name="Area" />
-        </div>
-        <div class="form-group">
-          <label for="q_type">I’m Interested In *</label>
-          <select id="q_type" name="Lead_Type" required>
-            <option value="">Select</option>
-            <option>Membership</option>
-            <option>Personal Training</option>
-            <option>Program</option>
-            <option>Corporate</option>
-            <option>Other</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="q_program">Select Program</label>
-          <select id="q_program" name="Program_Interest">
-            <option value="">Any / Not Sure</option>
-            <option>Bodybuilding</option>
-            <option>Yoga</option>
-            <option>Muay Thai</option>
-            <option>Kickboxing</option>
-            <option>Zumba</option>
-            <option>Transformation</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="q_msg">How can we help?</label>
-          <textarea id="q_msg" name="Notes"></textarea>
-        </div>
-        <button type="submit" class="btn-primary">Submit Query</button>
       </form>
     </div>
-    <div>
-      <div class="section-title">Locations & Timings</div>
-      <p><strong>Greater Noida Club:</strong><br/>Address line here, landmark, pin code.</p>
-      <p><strong>Greater Noida West Club:</strong><br/>Address line here, landmark, pin code.</p>
-      <p><strong>Timings:</strong><br/>Mon–Sat: 6:00 AM – 10:00 PM<br/>Sun: 8:00 AM – 2:00 PM</p>
-      <p><strong>Contact:</strong><br/>Phone: +91-XXXXXXXXXX<br/>WhatsApp: +91-YYYYYYYYYY</p>
+
+    <div class="contact-card">
+      <div class="section-kicker">Gold Standard Facilities</div>
+      <p style="font-size:13px; margin-bottom:10px;">
+        Dedicated strength floor, combat zone, yoga studio and group class arena designed for serious results with a welcoming vibe.
+      </p>
+      <ul class="corporate-list">
+        <li>• Certified coaches for bodybuilding, yoga, Muay Thai, kickboxing &amp; Zumba.</li>
+        <li>• Structured 8–16 week transformation programs with nutrition guidance.</li>
+        <li>• Separate focus time for beginners, intermediates and athletes.</li>
+        <li>• Shower &amp; locker facilities (as per location), valet/parking guidance.</li>
+      </ul>
+      <p class="contact-tagline">
+        Talk to us about <strong>family memberships</strong>, <strong>student plans</strong> and <strong>corporate tie‑ups</strong> for your office or society.
+      </p>
     </div>
-  </div>
-</section>
+  </section>
+
+  <!-- WHAT'S NEW -->
+  <section class="section" id="whatsnew">
+    <div class="section-kicker">This Week At The Club</div>
+    <h2 class="section-title">What’s New &amp; Upcoming</h2>
+    <p class="section-body">
+      New batches, challenges and limited‑period offers to keep you and your team excited to train.
+    </p>
+
+    <div class="programs-grid" style="margin-top:18px;">
+      <article class="program-card">
+        <!-- replace src with your actual class photo -->
+        <img src="images/muay-thai.jpg" alt="Muay Thai class" />
+        <div class="program-content">
+          <div class="program-label">New Combat Batch</div>
+          <div class="program-title">Muay Thai Fundamentals – 7 PM</div>
+          <div class="program-meta">
+            <span>Mon • Wed • Fri • GN Studio</span>
+            <span class="chip">Book Trial</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="program-card">
+        <img src="images/zumba.jpg" alt="Zumba class" />
+        <div class="program-content">
+          <div class="program-label">Group Energy</div>
+          <div class="program-title">Zumba &amp; Dance Fitness Evenings</div>
+          <div class="program-meta">
+            <span>GN West • 3 batches daily</span>
+            <span class="chip">New</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="program-card">
+        <img src="images/corporate-camp.jpg" alt="Corporate wellness camp" />
+        <div class="program-content">
+          <div class="program-label">Corporate Wellness</div>
+          <div class="program-title">On‑Site Fitness &amp; Yoga Camps</div>
+          <div class="program-meta">
+            <span>Noida &amp; GN IT parks / societies</span>
+            <span class="chip">Enquire</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- PROGRAMS -->
+  <section class="section" id="programs">
+    <div class="section-kicker">Programs &amp; Sessions</div>
+    <h2 class="section-title">Choose Your Training Track</h2>
+    <p class="section-body">
+      From strength and conditioning to yoga and combat sports, choose a focused track or mix sessions across programs.
+    </p>
+
+    <div class="programs-grid">
+      <article class="program-card">
+        <img src="images/strength.jpg" alt="Strength training" />
+        <div class="program-content">
+          <div class="program-label">Strength</div>
+          <div class="program-title">Bodybuilding &amp; Strength Lab</div>
+          <div class="program-meta">
+            <span>Progressive overload, power &amp; hypertrophy blocks.</span>
+            <span class="chip">Serious Lifting</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="program-card">
+        <img src="images/yoga-studio.jpg" alt="Yoga studio" />
+        <div class="program-content">
+          <div class="program-label">Mind &amp; Mobility</div>
+          <div class="program-title">Yoga &amp; Mobility Studio</div>
+          <div class="program-meta">
+            <span>Morning &amp; evening flows for all levels.</span>
+            <span class="chip">Calm • Focus</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="program-card">
+        <img src="images/transformation.jpg" alt="Transformation coaching" />
+        <div class="program-content">
+          <div class="program-label">Coaching</div>
+          <div class="program-title">8–16 Week Transformation</div>
+          <div class="program-meta">
+            <span>Custom plan, PT, check‑ins &amp; habit coaching.</span>
+            <span class="chip">1:1</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- CORPORATE -->
+  <section class="section" id="corporate">
+    <div class="section-kicker">For Companies &amp; Communities</div>
+    <h2 class="section-title">Corporate Gym &amp; Workforce Fitness</h2>
+    <p class="section-body">
+      We design, set up and operate complete gyms inside offices, societies and campuses with certified trainers and
+      measurable engagement.
+    </p>
+
+    <div class="corporate">
+      <div>
+        <ul class="corporate-list">
+          <li>• End‑to‑end gym setup: layout, equipment, flooring and branding as per your space.</li>
+          <li>• On‑site workforce: floor trainers, PTs, group class instructors and reception staff.</li>
+          <li>• Corporate‑only programming: desk‑stretch breaks, step challenges, wellness weeks.</li>
+          <li>• Monthly reporting: usage, participation, events and employee feedback.</li>
+        </ul>
+        <div style="margin-top:16px; display:flex; gap:10px; flex-wrap:wrap;">
+          <a href="#contact" class="btn btn-gold">Enquire for Corporate Gym</a>
+          <a href="#lead" class="btn btn-outline">Schedule Site Visit</a>
+        </div>
+      </div>
+
+      <aside class="corporate-panel">
+        <strong style="font-family:'Oswald',sans-serif;letter-spacing:0.09em;text-transform:uppercase;font-size:13px;">
+          Ideal For
+        </strong>
+        <div class="corporate-pills">
+          <div class="pill-soft">IT &amp; Tech Parks</div>
+          <div class="pill-soft">Coworking Spaces</div>
+          <div class="pill-soft">Gated Societies</div>
+          <div class="pill-soft">Universities &amp; Institutes</div>
+        </div>
+        <p>
+          Share your location, headcount band and preferred go‑live date. Our corporate team will design a proposal that
+          balances <strong>capex, opex and engagement</strong> for your organisation.
+        </p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- TRAINERS -->
+  <section class="section" id="trainers">
+    <div class="section-kicker">Coaching Team</div>
+    <h2 class="section-title">Trainers &amp; Transformation Stories</h2>
+    <p class="section-body">
+      Work with highly screened coaches for strength, yoga, combat and group energy – backed by real transformation results.
+    </p>
+
+    <div class="trainers-grid">
+      <article class="trainer-card">
+        <div class="trainer-media">
+          <img src="images/trainer-strength.jpg" alt="Head strength coach" />
+        </div>
+        <div class="trainer-body">
+          <div class="trainer-name">Rahul • Head Coach</div>
+          <div class="trainer-role">Bodybuilding &amp; Strength</div>
+          <div class="trainer-speciality">
+            Specialises in advanced strength periodisation, powerlifting technique and stage prep guidance.
+          </div>
+          <a href="#lead" class="btn btn-outline" style="padding-inline:12px;font-size:11px;">Book With Rahul</a>
+        </div>
+      </article>
+
+      <article class="trainer-card">
+        <div class="trainer-media">
+          <img src="images/trainer-yoga.jpg" alt="Yoga and Zumba coach" />
+        </div>
+        <div class="trainer-body">
+          <div class="trainer-name">Priya • Flow Coach</div>
+          <div class="trainer-role">Yoga &amp; Zumba</div>
+          <div class="trainer-speciality">
+            Blends traditional yoga with modern mobility and rhythm‑based classes for all age groups.
+          </div>
+          <a href="#lead" class="btn btn-outline" style="padding-inline:12px;font-size:11px;">Book With Priya</a>
+        </div>
+      </article>
+
+      <article class="trainer-card">
+        <div class="trainer-media">
+          <img src="images/trainer-muaythai.jpg" alt="Muay Thai coach" />
+        </div>
+        <div class="trainer-body">
+          <div class="trainer-name">Imran • Fight Coach</div>
+          <div class="trainer-role">Muay Thai &amp; Kickboxing</div>
+          <div class="trainer-speciality">
+            Technical striking, conditioning and self‑defence for beginners to competitive enthusiasts.
+          </div>
+          <a href="#lead" class="btn btn-outline" style="padding-inline:12px;font-size:11px;">Book With Imran</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- CONTACT / LOCATIONS -->
+  <section class="section" id="contact">
+    <div class="section-kicker">Visit Or Write To Us</div>
+    <h2 class="section-title">Query &amp; Membership Enquiry</h2>
+    <p class="section-body">
+      Send a quick query for memberships, PT, programs or corporate gyms. Our front‑desk or corporate team will connect soon.
+    </p>
+
+    <div class="contact-grid">
+      <div class="contact-card">
+        <form action="https://hook.make.com/YOUR_WEBHOOK_ID" method="post">
+          <input type="hidden" name="Source" value="Website_Contact" />
+          <div class="form-grid">
+            <div class="form-field">
+              <label class="form-label" for="q_name">Full Name *</label>
+              <input id="q_name" name="Name" required />
+            </div>
+            <div class="form-field">
+              <label class="form-label" for="q_phone">Mobile *</label>
+              <input id="q_phone" name="Phone" required />
+            </div>
+            <div class="form-field">
+              <label class="form-label" for="q_email">Email</label>
+              <input id="q_email" name="Email" />
+            </div>
+            <div class="form-field">
+              <label class="form-label" for="q_area">Area / Society</label>
+              <input id="q_area" name="Area" />
+            </div>
+            <div class="form-field">
+              <label class="form-label" for="q_type">I’m Interested In *</label>
+              <select id="q_type" name="Lead_Type" required>
+                <option value="">Select</option>
+                <option>Membership</option>
+                <option>Personal Training</option>
+                <option>Program</option>
+                <option>Corporate</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label class="form-label" for="q_program">Select Program</label>
+              <select id="q_program" name="Program_Interest">
+                <option value="">Any / Not sure</option>
+                <option>Bodybuilding</option>
+                <option>Yoga</option>
+                <option>Muay Thai</option>
+                <option>Kickboxing</option>
+                <option>Zumba</option>
+                <option>Transformation</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-field" style="margin-top:8px;">
+            <label class="form-label" for="q_msg">Question / Requirement</label>
+            <textarea id="q_msg" name="Notes"></textarea>
+          </div>
+
+          <div class="form-footer">
+            <button type="submit" class="btn btn-gold">Submit Query</button>
+            <p class="form-note">
+              For urgent queries, call or WhatsApp using the buttons on this page and mention this website.
+            </p>
+          </div>
+        </form>
+      </div>
+
+      <aside class="contact-card contact-meta">
+        <p><strong>Greater Noida Club</strong><br />Address line here, landmark, Greater Noida.</p>
+        <p><strong>Greater Noida West Club</strong><br />Address line here, landmark, GN West.</p>
+        <p><strong>Timings</strong><br />Mon–Sat: 6:00 AM – 10:00 PM<br />Sun: 8:00 AM – 2:00 PM</p>
+        <p><strong>Contact</strong><br />Call: +91‑XXXXXXXXXX<br />WhatsApp: +91‑YYYYYYYYYY</p>
+        <p class="contact-tagline">
+          Parking, locker and shower availability may vary by location – check with our team before your first visit.
+        </p>
+      </aside>
+    </div>
+  </section>
+
+</main>
 
 <footer>
-  <div class="footer-top">
+  <div class="footer-inner">
     <div>
-      <strong>Gold's Gym Greater Noida & Greater Noida West</strong><br/>
-      Franchisee of Gold's Gym India.
+      <div class="logo-text-main">GOLD'S GYM</div>
+      <div class="logo-text-sub">Greater Noida &amp; Greater Noida West</div>
+      <p style="margin-top:8px;">
+        Franchisee of Gold’s Gym India. Delivering international‑standard training with a neighbourhood‑club feel.
+      </p>
     </div>
-    <div>
-      <a href="#programs">Programs</a><br/>
-      <a href="#corporate">Corporate Solutions</a><br/>
+
+    <div class="footer-links">
+      <a href="#programs">Programs</a>
+      <a href="#corporate">Corporate Solutions</a>
       <a href="#contact">Membership Enquiry</a>
     </div>
-    <div class="socials">
-      <div>Follow us</div>
-      <a href="#">Instagram</a>
-      <a href="#">Facebook</a>
-      <a href="#">YouTube</a>
+
+    <div>
+      <div class="footer-social">
+        <a href="#">Instagram</a>
+        <a href="#">Facebook</a>
+        <a href="#">YouTube</a>
+      </div>
+      <p style="margin-top:8px;">© 2026 Gold's Gym Greater Noida Franchise. All rights reserved.</p>
     </div>
   </div>
-  <div>© 2026 Gold's Gym Greater Noida Franchise. All rights reserved.</div>
 </footer>
 
-<a class="whatsapp-bubble" href="https://wa.me/91YYYYYYYYYY?text=Hi%20Golds%20Gym%2C%20I%20want%20to%20know%20about%20membership.">
+<a class="whatsapp-fab" href="https://wa.me/91YYYYYYYYYY?text=Hi%20Golds%20Gym%2C%20I%20want%20to%20know%20about%20membership.">
+  <span class="bubble-dot"></span>
   WhatsApp Us
 </a>
 
