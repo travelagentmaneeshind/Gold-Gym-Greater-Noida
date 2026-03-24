@@ -6,9 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- Google Fonts -->
-  //fonts.googleapis.com">
-  //fonts.gstatic.com" crossorigin>
-  //fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -19,7 +19,6 @@
       --accent-health: #22c55e;
       --text-main: #f5f5f5;
       --text-muted: #a5a5b5;
-      --danger: #f97373;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -34,8 +33,6 @@
 
     a { color: inherit; text-decoration: none; }
     img { max-width: 100%; display: block; }
-
-    /* HEADER */
 
     header {
       position: sticky;
@@ -145,10 +142,7 @@
       box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.4), 0 12px 25px rgba(0, 0, 0, 0.7);
     }
 
-    .btn-gold:hover {
-      filter: brightness(1.06);
-      transform: translateY(-1px);
-    }
+    .btn-gold:hover { filter: brightness(1.06); transform: translateY(-1px); }
 
     .btn-outline {
       border-color: rgba(249, 250, 251, 0.18);
@@ -288,8 +282,7 @@
       border: 1px solid rgba(255, 255, 255, 0.06);
       background:
         linear-gradient(145deg, rgba(9, 9, 11, 0.92), rgba(8, 8, 28, 0.98)),
-        url("images/samuel-girven-fqMu99l8sqo-unsplash.jpg") center/cover no-repeat;
-      /* hero background from your gym interior image */
+        url("samuel-girven-fqMu99l8sqo-unsplash.jpg") center/cover no-repeat;
       box-shadow:
         0 25px 60px rgba(0, 0, 0, 0.9),
         0 0 0 1px rgba(255, 255, 255, 0.03);
@@ -422,7 +415,7 @@
 
     .section { margin-top: 50px; }
 
-    /* PROGRAMS GRID */
+    /* PROGRAM CARDS */
 
     .programs-grid {
       margin-top: 18px;
@@ -472,10 +465,7 @@
       border-color: rgba(255, 221, 2, 0.45);
     }
 
-    .program-card:hover img {
-      transform: scale(1.06);
-      opacity: 1;
-    }
+    .program-card:hover img { transform: scale(1.06); opacity: 1; }
 
     .program-content {
       position: relative;
@@ -517,8 +507,6 @@
       text-transform: uppercase;
       letter-spacing: 0.12em;
     }
-
-    /* CORPORATE, TRAINERS, CONTACT etc. stay same as earlier version... */
 
     .corporate {
       display: grid;
@@ -765,20 +753,20 @@
       <h3>Get a Call Back in 15 Minutes</h3>
       <p>Drop your details for memberships, programs or corporate gyms. Our team will call or WhatsApp you quickly.</p>
 
-      <!-- replace action URL with your Make.com webhook -->
+      <!-- REPLACE WITH YOUR REAL MAKE.COM WEBHOOK URL -->
       <form action="https://hook.make.com/YOUR_WEBHOOK_ID" method="post">
         <input type="hidden" name="Source" value="Website_Hero" />
         <div class="form-grid">
           <div class="form-field">
-            abel class="form-label" for="name">Full Name *</label>
+            <label class="form-label" for="name">Full Name *</label>
             <input id="name" name="Name" required />
           </div>
           <div class="form-field">
-            abel class="form-label" for="phone">Mobile *</label>
+            <label class="form-label" for="phone">Mobile *</label>
             <input id="phone" name="Phone" required />
           </div>
           <div class="form-field">
-            abel class="form-label" for="interest">I’m Interested In *</label>
+            <label class="form-label" for="interest">I’m Interested In *</label>
             <select id="interest" name="Lead_Type" required>
               <option value="">Select</option>
               <option>Membership</option>
@@ -788,7 +776,7 @@
             </select>
           </div>
           <div class="form-field">
-            abel class="form-label" for="program">Program Focus</label>
+            <label class="form-label" for="program">Program Focus</label>
             <select id="program" name="Program_Interest">
               <option value="">Any / Not sure</option>
               <option>Bodybuilding</option>
@@ -800,14 +788,14 @@
             </select>
           </div>
           <div class="form-field">
-            abel class="form-label" for="location">Preferred Location *</label>
+            <label class="form-label" for="location">Preferred Location *</label>
             <select id="location" name="Preferred_Location" required>
               <option>Greater Noida</option>
               <option>Greater Noida West</option>
             </select>
           </div>
           <div class="form-field">
-            abel class="form-label" for="time">Preferred Time</label>
+            <label class="form-label" for="time">Preferred Time</label>
             <select id="time" name="Preferred_Time">
               <option value="">Any</option>
               <option>Early Morning</option>
@@ -818,7 +806,7 @@
         </div>
 
         <div class="form-field" style="margin-top:8px;">
-          abel class="form-label" for="notes">Goal / Question</label>
+          <label class="form-label" for="notes">Goal / Question</label>
           <textarea id="notes" name="Notes" placeholder="E.g. 10 kg fat loss in 3 months, Muay Thai starter, corporate gym for 200 employees"></textarea>
         </div>
 
@@ -836,11 +824,11 @@
       <p style="font-size:13px; margin-bottom:10px;">
         Dedicated strength floor, combat zone, yoga studio and group class arena designed for serious results with a welcoming vibe.
       </p>
-      <ul class="corporate-listst">
-        >• Certified coaches for bodybuilding, yoga, Muay Thai, kickboxing &amp; Zumba.</l/li>
-        >• Structured 8–16 week transformation programs with nutrition guidance.</l/li>
-        >• Separate focus time for beginners, intermediates and athletes.</l/li>
-        >• Shower &amp; locker facilities (as per location), valet/parking guidance.</li>
+      <ul class="corporate-list">
+        <li>• Certified coaches for bodybuilding, yoga, Muay Thai, kickboxing &amp; Zumba.</li>
+        <li>• Structured 8–16 week transformation programs with nutrition guidance.</li>
+        <li>• Separate focus time for beginners, intermediates and athletes.</li>
+        <li>• Shower &amp; locker facilities (as per location), valet/parking guidance.</li>
       </ul>
       <p class="contact-tagline">
         Talk to us about <strong>family memberships</strong>, <strong>student plans</strong> and <strong>corporate tie‑ups</strong> for your office or society.
@@ -858,7 +846,7 @@
 
     <div class="programs-grid" style="margin-top:18px;">
       <article class="program-card">
-        <img src="images/brett-jordan-U2q73PfHFpM-unsplash.jpg" alt="Muay Thai class" />
+        <img src="brett-jordan-U2q73PfHFpM-unsplash.jpg" alt="Muay Thai class" />
         <div class="program-content">
           <div class="program-label">New Combat Batch</div>
           <div class="program-title">Muay Thai Fundamentals – 7 PM</div>
@@ -870,7 +858,7 @@
       </article>
 
       <article class="program-card">
-        <img src="images/olga-pukhalskaya-dwka5DDrnY0-unsplash.jpg" alt="Zumba & Yoga group class" />
+        <img src="olga-pukhalskaya-dwka5DDrnY0-unsplash.jpg" alt="Zumba & Yoga group class" />
         <div class="program-content">
           <div class="program-label">Group Energy</div>
           <div class="program-title">Zumba &amp; Dance Fitness Evenings</div>
@@ -882,7 +870,7 @@
       </article>
 
       <article class="program-card">
-        <img src="images/alen-kajtezovic-Jx4OJK76lcM-unsplash.jpg" alt="Corporate wellness camp" />
+        <img src="alen-kajtezovic-Jx4OJK76lcM-unsplash.jpg" alt="Corporate wellness camp" />
         <div class="program-content">
           <div class="program-label">Corporate Wellness</div>
           <div class="program-title">On‑Site Fitness &amp; Yoga Camps</div>
@@ -905,7 +893,7 @@
 
     <div class="programs-grid">
       <article class="program-card">
-        <img src="images/eser-goat-Vh9ImKk5sGc-unsplash.jpg" alt="Strength training floor" />
+        <img src="eser-goat-Vh9ImKk5sGc-unsplash.jpg" alt="Strength training floor" />
         <div class="program-content">
           <div class="program-label">Strength</div>
           <div class="program-title">Bodybuilding &amp; Strength Lab</div>
@@ -917,7 +905,7 @@
       </article>
 
       <article class="program-card">
-        <img src="images/alen-kajtezovic-Jx4OJK76lcM-unsplash.jpg" alt="Yoga studio" />
+        <img src="alen-kajtezovic-Jx4OJK76lcM-unsplash.jpg" alt="Yoga studio" />
         <div class="program-content">
           <div class="program-label">Mind &amp; Mobility</div>
           <div class="program-title">Yoga &amp; Mobility Studio</div>
@@ -929,7 +917,7 @@
       </article>
 
       <article class="program-card">
-        <img src="images/engin-akyurt-P2aYOmAs5eM-unsplash.jpg" alt="Transformation coaching" />
+        <img src="engin-akyurt-P2aYOmAs5eM-unsplash.jpg" alt="Transformation coaching" />
         <div class="program-content">
           <div class="program-label">Coaching</div>
           <div class="program-title">8–16 Week Transformation</div>
@@ -953,11 +941,11 @@
 
     <div class="corporate">
       <div>
-        <ul class="corporate-listst">
-          >• End‑to‑end gym setup: layout, equipment, flooring and branding as per your space.</l/li>
-          >• On‑site workforce: floor trainers, PTs, group class instructors and reception staff.</l/li>
-          >• Corporate‑only programming: desk‑stretch breaks, step challenges, wellness weeks.</l/li>
-          >• Monthly reporting: usage, participation, events and employee feedback.</li>
+        <ul class="corporate-list">
+          <li>• End‑to‑end gym setup: layout, equipment, flooring and branding as per your space.</li>
+          <li>• On‑site workforce: floor trainers, PTs, group class instructors and reception staff.</li>
+          <li>• Corporate‑only programming: desk‑stretch breaks, step challenges, wellness weeks.</li>
+          <li>• Monthly reporting: usage, participation, events and employee feedback.</li>
         </ul>
         <div style="margin-top:16px; display:flex; gap:10px; flex-wrap:wrap;">
           <a href="#contact" class="btn btn-gold">Enquire for Corporate Gym</a>
@@ -994,7 +982,7 @@
     <div class="trainers-grid">
       <article class="trainer-card">
         <div class="trainer-media">
-          <img src="images/vladislav-bychkov-SJyTPXpHDgo-unsplash.jpg" alt="Strength coach" />
+          <img src="vladislav-bychkov-SJyTPXpHDgo-unsplash.jpg" alt="Strength coach" />
         </div>
         <div class="trainer-body">
           <div class="trainer-name">Rahul • Head Coach</div>
@@ -1008,7 +996,7 @@
 
       <article class="trainer-card">
         <div class="trainer-media">
-          <img src="images/olga-pukhalskaya-dwka5DDrnY0-unsplash.jpg" alt="Yoga coach" />
+          <img src="olga-pukhalskaya-dwka5DDrnY0-unsplash.jpg" alt="Yoga coach" />
         </div>
         <div class="trainer-body">
           <div class="trainer-name">Priya • Flow Coach</div>
@@ -1022,7 +1010,7 @@
 
       <article class="trainer-card">
         <div class="trainer-media">
-          <img src="images/dane-wetton-AkSJQnem75Y-unsplash.jpg" alt="Muay Thai coach" />
+          <img src="dane-wetton-AkSJQnem75Y-unsplash.jpg" alt="Muay Thai coach" />
         </div>
         <div class="trainer-body">
           <div class="trainer-name">Imran • Fight Coach</div>
@@ -1050,23 +1038,23 @@
           <input type="hidden" name="Source" value="Website_Contact" />
           <div class="form-grid">
             <div class="form-field">
-              abel class="form-label" for="q_name">Full Name *</label>
+              <label class="form-label" for="q_name">Full Name *</label>
               <input id="q_name" name="Name" required />
             </div>
             <div class="form-field">
-              abel class="form-label" for="q_phone">Mobile *</label>
+              <label class="form-label" for="q_phone">Mobile *</label>
               <input id="q_phone" name="Phone" required />
             </div>
             <div class="form-field">
-              abel class="form-label" for="q_email">Email</label>
+              <label class="form-label" for="q_email">Email</label>
               <input id="q_email" name="Email" />
             </div>
             <div class="form-field">
-              abel class="form-label" for="q_area">Area / Society</label>
+              <label class="form-label" for="q_area">Area / Society</label>
               <input id="q_area" name="Area" />
             </div>
             <div class="form-field">
-              abel class="form-label" for="q_type">I’m Interested In *</label>
+              <label class="form-label" for="q_type">I’m Interested In *</label>
               <select id="q_type" name="Lead_Type" required>
                 <option value="">Select</option>
                 <option>Membership</option>
@@ -1077,7 +1065,7 @@
               </select>
             </div>
             <div class="form-field">
-              abel class="form-label" for="q_program">Select Program</label>
+              <label class="form-label" for="q_program">Select Program</label>
               <select id="q_program" name="Program_Interest">
                 <option value="">Any / Not sure</option>
                 <option>Bodybuilding</option>
@@ -1091,7 +1079,7 @@
           </div>
 
           <div class="form-field" style="margin-top:8px;">
-            abel class="form-label" for="q_msg">Question / Requirement</label>
+            <label class="form-label" for="q_msg">Question / Requirement</label>
             <textarea id="q_msg" name="Notes"></textarea>
           </div>
 
